@@ -1,0 +1,6 @@
+pymongo
+rq
+flask
+flask_compress
+pika
+faiss-cpu
