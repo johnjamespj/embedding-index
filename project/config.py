@@ -8,3 +8,5 @@ mongo_db = os.environ.get("MONGO_DB", "task_runner")
 
 taskRunnerRoutingKey = "task_runner"
 exchangeName = "task_runner"
+
+indexFilePath = os.environ.get("INDEX_FILE_PATH", "/data")
