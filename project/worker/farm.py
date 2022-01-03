@@ -1,7 +1,9 @@
 import multiprocessing as mp
+from importlib import reload
 
 def startWorker():
     import project.worker.queue as worker
+    worker = reload(worker)
     worker.startWorker()
 
 # delete workers

@@ -48,9 +48,10 @@ def queueMessageCallback(ch, method, properties, body):
         exchange='',
         routing_key=payload["$resultQueue"],
         body=pickle.dumps({
+            "$taskId": payload["$taskId"],
             "error": error,
             "result": result,
-            "time_taken": time.time() - start_time
+            "time_taken": time.time() - start_time,
         }),
         properties=pika.BasicProperties(
             delivery_mode=pika.spec.PERSISTENT_DELIVERY_MODE
